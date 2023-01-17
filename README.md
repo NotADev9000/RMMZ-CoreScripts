@@ -4,7 +4,6 @@ RPG Maker MZ scripts split into separate files.
 <br>
 
 ## CoreScripts:
----
 RPG Maker MZ Version: 1.6.0
 1. copy the `rmmz_xxx` directories into your projects `js` folder
 2. copy `main.js` into your projects `js` folder *
@@ -13,7 +12,6 @@ RPG Maker MZ Version: 1.6.0
 <br>
 
 ## To split your own files **
----
 1. copy `splits.js` into your projects `js` folder
 2. create folders for each rmmz file e.g. `rmmz_core`, `rmmz_manager` etc.
 3. run `node splits.js` on command line
