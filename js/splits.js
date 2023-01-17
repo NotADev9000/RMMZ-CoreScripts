@@ -6,7 +6,7 @@
 *
 * ############################################################################
 * ============================================================================
-* 1. move this file into your projects 'js' folder.
+* 1. copy this file into your projects 'js' folder.
 * 2. create folders for each rmmz file e.g. 'rmmz_core', 'rmmz_manager' etc.
 * 3. run 'node splits.js' on command line
 *
