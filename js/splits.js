@@ -25,10 +25,13 @@ for (const filename of commandFiles) {
     fs.readFile(path.join('.', filename), 'utf8', (err, data) => {
         if (err) throw err;
         const split_classes = data.split(splitter);
+        // remove header from start of array & empty space from the end
+        split_classes.pop();
+        split_classes.shift();
         for (const [i, maybeclass]  of split_classes.entries()) {
             const tempname = filename.replace('.js','');
-            const matches = maybeclass.match(/(function) \w+/);
-            const classname = matches ? matches[0].replace('function','').trim() : `unknown-class-${i}`;
+            const matches = maybeclass.match(/(function) \w+|(@namespace) \w+/);
+            const classname = matches ? matches[0].replace(/(function)|(@namespace)/, '').trim() : `unknown-class-${i}`;
             const newpath = `/${tempname}/${classname}.js`;
             const newfilepath = path.join('.', newpath);
             fs.writeFile(newfilepath, maybeclass, (werr, wdata) =>{
